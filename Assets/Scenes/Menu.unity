@@ -922,11 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa14192af18ee34c80871ddaf28268a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bgmAudioSource:
-  - {fileID: 711285099}
-  - {fileID: 1277070032}
-  - {fileID: 400667767}
-  - {fileID: 1589071901}
+  _bgmAudioSource: {fileID: 711285099}
   isAudioEnabled: 0
 --- !u!4 &1424379747
 Transform:
