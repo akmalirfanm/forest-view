@@ -13,18 +13,9 @@ public class MushroomSpawner : MonoBehaviour
     private Transform mushroomPool;
 
     void FixedUpdate(){
-   //nstantiate(objPrefab, transform.position, Quaternion.identity);
-        //GameObject mushroom = ObjectPool.instance.GetPoolObject();
-        //if (mushroom != null)
-        //{
-        //    //mushroom.transform.position = mushroomPosition.position;
-        //    mushroom.SetActive(true);
-        //}
-        //else
-        //{
-        //    OnDestroy();
-        //}
-        SpawnMushroom();
+        Instantiate(objPrefab, transform.position, Quaternion.identity);
+        
+        //SpawnMushroom();
 
     }
 
@@ -32,28 +23,28 @@ public class MushroomSpawner : MonoBehaviour
     //{
     //    objPrefab.SetActive(false);
     //}
-    private void SpawnMushroom()
-    {
-        if (deactivedPool.Count > 0)
-        {
-            GameObject actMushroom = deactivedPool[0];
-            deactivedPool.RemoveAt(0);
-            actMushroom.transform.position = gameObject.transform.position;
-            Mushroom mScript = actMushroom.GetComponent<Mushroom>();
-            mScript.SetStart();
-        }
+    //private void SpawnMushroom()
+    //{
+    //    if (deactivedPool.Count > 0)
+    //    {
+    //        GameObject actMushroom = deactivedPool[0];
+    //        deactivedPool.RemoveAt(0);
+    //        actMushroom.transform.position = gameObject.transform.position;
+    //        Mushroom mScript = actMushroom.GetComponent<Mushroom>();
+    //        mScript.SetStart();
+    //    }
 
-        if (deactivedPool.Count <= 0)
-        {
-            GameObject mushroom = Instantiate(objPrefab, transform.position, Quaternion.identity, mushroomPool);
-            Mushroom mScript = mushroom.GetComponent<Mushroom>();
-            mScript.SetSpawner(gameObject);
-        }
-    }
+    //    if (deactivedPool.Count <= 0)
+    //    {
+    //        GameObject mushroom = Instantiate(objPrefab, transform.position, Quaternion.identity, mushroomPool);
+    //        Mushroom mScript = mushroom.GetComponent<Mushroom>();
+    //        mScript.SetSpawner(gameObject);
+    //    }
+    //}
 
-    public void AddDead(GameObject obj)
-    {
-        deactivedPool.Add(obj);
-    }
+    //public void AddDead(GameObject obj)
+    //{
+    //    deactivedPool.Add(obj);
+    //}
     
 }
